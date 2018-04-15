@@ -22,16 +22,16 @@ else
             break;
         case ControlTemplate.ControlType.P:
             {
-                    <WikiInput Values=@(item.Values) />
-                }
-                break;
-            case ControlTemplate.ControlType.Table:
-                {
-                    <WikiTable Values =@(item.Values) />
-                }
-                break;
-            default:
-                break;
+                <WikiInput Values=@(item.Values) />
+            }
+            break;
+        case ControlTemplate.ControlType.Table:
+            {
+                <WikiTable Values =@(item.Values) />
+            }
+            break;
+        default:
+            break;
         }
     }
 

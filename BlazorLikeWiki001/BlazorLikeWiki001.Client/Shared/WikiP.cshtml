@@ -1,8 +1,15 @@
 ﻿@inject HttpClient Http
 
-    <p>
-        @Text
-    </p>
+    @if (Values == null)
+    {
+        <div>よみこみちゅう・・・</div>
+    }
+    else
+    {
+        <p >
+            @Text
+        </p >
+    }
 
 @functions
 {
