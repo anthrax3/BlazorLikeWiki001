@@ -10,8 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.4" />
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.0-preview2-final" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="0.3.0-preview1-10210" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="2.1.0-preview2-final" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0-preview2-final" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.0-preview2-26406-04" />
   </ItemGroup>
 
   <ItemGroup>

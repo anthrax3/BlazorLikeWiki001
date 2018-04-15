@@ -1,0 +1,54 @@
+﻿@inject HttpClient Http
+
+
+    @if (Values == null)
+    {
+        <div>よみこみちゅう・・・</div>
+    }
+    else
+    {
+        <input type="@Type" value="@Text" />
+    }
+
+
+@functions
+{
+    Dictionary<string, string> values;
+    public Dictionary<string, string> Values
+    {
+        get { return values; }
+        set
+        {
+            values = value;
+            this.StateHasChanged();
+        }
+    }
+
+    string Type
+    {
+        get
+        {
+            string v = string.Empty;
+
+            if(Values != null && Values.ContainsKey("Type"))
+            {
+                v = Values["Type"];
+            }
+            return v;
+        }
+    }
+
+    string Text
+    {
+        get
+        {
+            string v = string.Empty;
+
+            if (Values != null && Values.ContainsKey("Text"))
+            {
+                v = Values["Text"];
+            }
+            return v;
+        }
+    }
+}

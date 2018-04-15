@@ -1,0 +1,51 @@
+﻿@using BlazorLikeWiki001.Shared
+@page "/wiki"
+@inject HttpClient Http
+
+
+@if (Tml == null)
+{
+    <p><em>なうろーでんぐ（。。</em></p>
+}
+else
+{
+    @foreach (var item in Tml.ControlList)
+    {
+        @*<WikiP Value=@(new P{ Text = "あああ"}) />*@
+    Console.WriteLine($"item.Type = {item.Type}");
+    switch (item.Type)
+    {
+        case ControlTemplate.ControlType.Input:
+            {
+                    <WikiP Values =@(item.Values) />
+                }
+            break;
+        case ControlTemplate.ControlType.P:
+            {
+                    <WikiInput Values=@(item.Values) />
+                }
+                break;
+            case ControlTemplate.ControlType.Table:
+                {
+                    <WikiTable Values =@(item.Values) />
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+}
+
+
+@functions
+{
+    WikiTemplate Tml;
+
+    protected override async Task OnInitAsync()
+    {
+        Tml = await Http.PostJsonAsync<WikiTemplate>("/api/Template/GetTemplateByName", "てすと");
+        Console.WriteLine($"{((Tml == null) ? "NULLぽ" : "アルヨー")}");
+        Console.WriteLine($"「{Tml.Name}」「{Tml.ControlList.Count}」件");
+    }
+}

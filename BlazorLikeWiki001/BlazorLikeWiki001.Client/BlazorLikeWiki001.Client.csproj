@@ -20,4 +20,43 @@
     <ProjectReference Include="..\BlazorLikeWiki001.Shared\BlazorLikeWiki001.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <BlazorGenerate Remove="Pages\Wiki.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Wiki.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Wiki.cshtml" />
+    <None Include="Shared\WikiInput.cshtml" />
+    <None Include="Shared\WikiP.cshtml" />
+    <None Include="Shared\WikiTable.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <BlazorGenerate Remove="Shared\WikiP.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Shared\WikiP.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <BlazorGenerate Remove="Shared\WikiInput.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Shared\WikiInput.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <BlazorGenerate Remove="Shared\WikiTable.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Shared\WikiTable.cshtml" />
+  </ItemGroup>
+
 </Project>

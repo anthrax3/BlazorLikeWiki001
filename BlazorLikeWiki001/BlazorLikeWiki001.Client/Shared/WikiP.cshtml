@@ -1,0 +1,34 @@
+﻿@inject HttpClient Http
+
+    <p>
+        @Text
+    </p>
+
+@functions
+{
+    Dictionary<string, string> values;
+    public Dictionary<string, string> Values
+    {
+        get { return values; }
+        set
+        {
+            values = value;
+            this.StateHasChanged();
+        }
+    }
+
+
+    string Text
+    {
+        get
+        {
+            string v = string.Empty;
+
+            if (Values != null && Values.ContainsKey("Text"))
+            {
+                v = Values["Text"];
+            }
+            return v;
+        }
+    }
+}

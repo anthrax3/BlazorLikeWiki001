@@ -1,0 +1,75 @@
+﻿@inject HttpClient Http
+
+
+    @if (Values == null)
+    {
+        <div>よみこみちゅう・・・</div>
+
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    @for (int ci = 0; ci < ColmunCount; ci++)
+                    {
+                        <th>@(ci)項目</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for (int ri = 0; ri < RowCount; ri++)
+                {
+                    <tr>
+                        @for (int ci = 0; ci < ColmunCount; ci++)
+                        {
+                            <th>@(ci)でーた</th>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    }
+
+
+@functions
+{
+    Dictionary<string, string> values;
+    public Dictionary<string, string> Values
+    {
+        get { return values; }
+        set
+        {
+            values = value;
+            this.StateHasChanged();
+        }
+    }
+
+    int ColmunCount
+    {
+        get
+        {
+            int i;
+            if(Values == null || !Values.ContainsKey("ColmunCount")||!int.TryParse(Values["ColmunCount"], out i))
+            {
+                return 0;
+            }
+            return i;
+        }
+    }
+
+    int RowCount
+    {
+        get
+        {
+            int i;
+            if (Values == null || !Values.ContainsKey("RowCount") || !int.TryParse(Values["RowCount"], out i))
+            {
+                return 0;
+            }
+            return i;
+        }
+    }
+}
